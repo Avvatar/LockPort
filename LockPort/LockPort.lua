@@ -140,11 +140,11 @@ function LockPort_NameListButton_OnClick(button)
 			
 				if not playercombat and not targetcombat then
 					count = count-1
-					base_message 			= "Summoning " .. name .. ""
-					base_whisper_message    = "Summoning you"
-					zone_message            = " to " .. GetZoneText()
-					subzone_message         = " - " .. GetSubZoneText()
-					shards_message          = " [" .. count .. " shards left]"
+					base_message 			= "Summoning " .. name .. " - 2 people pls click the portal."
+					base_whisper_message    = ""
+					zone_message            = ""
+					subzone_message         = ""
+					shards_message          = ""
 					message                 = base_message
 					whisper_message         = base_whisper_message
 
@@ -197,12 +197,12 @@ function LockPort_NameListButton_OnClick(button)
 						if LockPortOptions.shards then
 					    	message = message .. shards_message
 						end
-						SendChatMessage(message, "SAY")
+						SendChatMessage(message, "RAID")
 
 						-- Send Whisper Message
-						if LockPortOptions.whisper then
-							SendChatMessage(whisper_message, "WHISPER", nil, name)
-						end
+						--if LockPortOptions.whisper then
+						--	SendChatMessage(whisper_message, "WHISPER", nil, name)
+						--end
 
 						-- Remove the summoned target
 						for i, v in ipairs (LockPortDB) do
